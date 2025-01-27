@@ -86,7 +86,7 @@ function App() {
     {
       id: 'autoClicker',
       name: 'lazy',
-      effect: () => setCps(prev => prev + 5),
+      effect: () => setCps(prev => prev + 2),
     },
   ]);
 
