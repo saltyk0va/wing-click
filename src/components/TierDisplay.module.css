@@ -1,0 +1,43 @@
+/* TierDisplay.module.css */
+.tierDisplay {
+    position: relative;
+    opacity: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    padding: 20px;
+    max-width: 800px;
+    font-family: 'Metamorphous', serif;
+    padding: 10px; /* Add padding for content spacing */
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px; /* Rounded corners */
+    background: radial-gradient(ellipse at center, var(--background-gradient-start) 0%, var(--background-gradient-mid) 60%, var(--background-gradient-end) 110%);
+    background-size: cover; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    z-index: 1; /* Ensure text is above the background image */
+}
+.tierDescription { /* New class for the text */
+    font-family: 'Metamorphous', sans-serif; /* Use your gothic font */
+    font-size: 2em;
+    text-align: center;
+    font-weight:700;
+    color: rgb(255, 255, 255); /* Base text color */
+    text-shadow: 0 0 10px #f7d22e; /* Initial glow */
+    mix-blend-mode: normal; /* Key for intense glow effect */
+    animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+    filter:saturate(100%);
+    filter:blur(0px);
+}
+
+.tierDisplay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border-radius from parent */
+    z-index: -1; /* Place overlay behind text */
+}

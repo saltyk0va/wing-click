@@ -1,0 +1,8 @@
+/* Counter.module.css */
+.counter {
+  font-size: 1.3em;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-family:'Metamorphous', sans-serif;
+  text-shadow: 1px 1px 2px rgb(255, 255, 250);
+}

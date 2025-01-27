@@ -1,0 +1,118 @@
+/* Popup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Add a backdrop blur */
+}
+
+.popup-content {
+    background-color: rgba(0, 0, 0, 0.397); /* Semi-transparent white */
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0px 0px 16px rgba(255, 198, 11, 0.801); /* More pronounced shadow */
+    text-align: center;
+    border: 0px solid rgba(199, 193, 193, 0); /* Subtle border */
+    backdrop-filter: blur(10px); /* Apply blur to the content itself */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    /* Glass gradient */
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.541),
+        rgba(255, 255, 255, 0.062)
+    );
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: white; /* White text for better contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.popup-content p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content button {
+    background-color: rgb(255, 217, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 50%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    font-family: 'Signika-Bold';
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(
+        1px 40%,
+        40% 40%,
+        40% 1%,
+        60% 1%,
+        60% 40%,
+        99% 40%,
+        99% 60%,
+        60% 60%,
+        60% 99%,
+        40% 99%,
+        40% 60%,
+        1% 60%
+    );
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    flex: 0 1 0; /* Distribute available space equally */
+    min-width: 100px; /* Minimum width for buttons */
+    max-width: 200px; /* Maximum width for buttons */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    mix-blend-mode: color-dodge; /* Key for intense glow effect */
+    animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+    filter:saturate(100%);
+}
+
+.popup-content button:hover {
+  
+    background-color: rgba(4, 21, 255, 0.97);
+    text-shadow: 0 0 8px rgba(10, 10, 10, 0.9);
+    box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.3), /* Deeper inner shadow on hover */
+                inset 0px -1px 3px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  mix-blend-mode: color-dodge; /* Key for intense glow effect */
+  animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+  filter:saturate(100%);
+  }
+
+
+h3 {
+    font-family: 'Metamorphous', sans-serif; 
+    font-size: 2.5em;
+    text-align: center;
+    color: rgb(255, 255, 255); /* Base text color */
+    text-shadow: 0 0 10px #faf752; /* Initial glow */
+    mix-blend-mode: normal; /* Key for intense glow effect */
+    animation: pulseGlow 2s linear infinite alternate; /* Optional animation */
+    filter:saturate(200%);
+    filter:blur(0px);
+  }
+  @keyframes pulseGlow {
+    20% {
+        text-shadow: 0 0 10px rgb(239, 255, 17);
+    }
+    100% {
+        text-shadow: 0 0 20px rgb(255, 159, 32), 0 0 30px rgba(252, 212, 34, 0.952); /* More intense glow with transparency */
+    }
+  }
+  p {
+    color:rgb(255, 255, 255) !important;
+    font-family: 'Signika-Regular';
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff !important; /* White glow */
+}

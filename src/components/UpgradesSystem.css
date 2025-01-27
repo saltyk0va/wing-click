@@ -1,0 +1,134 @@
+/* UpgradesSystem.css */
+.upgrades-container {
+  position: relative;
+  opacity: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  padding: 20px;
+  min-height: 350px;
+  max-width: 800px;
+  background: radial-gradient(ellipse at center top, var(--background-gradient-start) 0%, var(--background-gradient-mid) 65%, var(--background-gradient-end) 100%);
+  background-size: cover; /* Or contain, depending on desired effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.05) inset;
+  backdrop-filter: blur(5px);
+  border: 0px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.upgrades-container::before,
+.upgrades-container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+}
+
+.upgrades-container::before {
+  top: -20px;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent rgba(68, 68, 68, 0.3) transparent;
+}
+
+.upgrades-container::after {
+  bottom: -80px;
+  border-width: 20px 20px 0 20px;
+  border-color: rgba(119, 119, 119, 0.3) transparent transparent transparent;
+}
+
+.upgrades-title {
+  text-align: center;
+  font-family: 'Metamorphous', serif;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.upgrades-list {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 10px;
+  width: 100%;
+  
+}
+
+.upgrade-button {
+  background-color: rgb(255, 217, 0);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  margin: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  border: 50%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+  font-family: 'Signika-Bold';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 170px;
+  clip-path: polygon(
+      1px 40%,
+      40% 40%,
+      40% 1%,
+      60% 1%,
+      60% 40%,
+      99% 40%,
+      99% 60%,
+      60% 60%,
+      60% 99%,
+      40% 99%,
+      40% 60%,
+      1% 60%
+  );
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  flex: 1 1 0; /* Distribute available space equally */
+  min-width: 100px; /* Minimum width for buttons */
+  max-width: 200px; /* Maximum width for buttons */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  mix-blend-mode: color-dodge; /* Key for intense glow effect */
+  animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+  filter:saturate(100%);
+            
+}
+
+.upgrade-button:disabled {
+  background-color: rgba(204, 204, 204, 0.5);
+  cursor: default;
+  color: #ccc;
+  text-shadow: none;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1), /* Less deep inner shadow when disabled */
+  inset 0px -1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.upgrade-button:hover:enabled {
+  
+  background-color: rgba(4, 21, 255, 0.97);
+  text-shadow: 0 0 8px rgba(10, 10, 10, 0.9);
+  box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.3), /* Deeper inner shadow on hover */
+              inset 0px -1px 3px rgba(0, 0, 0, 0.15);
+box-sizing: border-box; /* Include padding and border in width calculation */
+mix-blend-mode: color-dodge; /* Key for intense glow effect */
+animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+filter:saturate(100%);
+}
+
+.upgrade-button:active:enabled {
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2), /* Less deep inner shadow on click */
+              inset 0px -2px 2px rgba(0, 0, 0, 0.05); /* Slightly different bottom shadow */
+  transform: translateY(1px); /* Small downward movement on click */
+}
+
+@keyframes pulseGlow2 {
+  0% {
+      text-shadow: 0 0 10px rgb(245, 233, 62);
+  }
+  100% {
+      text-shadow: 0 0 20px rgb(250, 240, 98), 0 0 30px rgb(240, 212, 52); /* More intense glow with transparency */
+  }
+}

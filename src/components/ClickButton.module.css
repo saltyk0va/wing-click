@@ -1,0 +1,80 @@
+/* ClickButton.module.css */
+.clickableImageContainer {
+  position: relative;
+  display: inline-block; /* Important for proper positioning */
+  overflow: visible;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.imageWrapper {
+  position: relative; /* For positioning the glow */
+  display: inline-block;
+  transition: transform 0.3s ease-out; /* Smooth transform */
+}
+
+.clickableImage {
+  display: block;
+  transition: transform 0.1s ease-in-out;
+}
+
+.clickableImageContainer:active .clickableImage {
+  transform: scale(1.1);
+}
+
+.clickableImageContainer:hover .glow {
+  opacity: 1;
+}
+
+.valueDisplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(247, 247, 247, 0.952);
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px rgb(255, 255, 250);
+  pointer-events: none;
+  font-family: 'Metamorphous';
+  mix-blend-mode:hard-light;
+}
+
+.featherContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Allow clicks to pass through */
+  overflow: hidden; /* Hide feathers that go outside the container */
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  filter:blur(2p);
+  mix-blend-mode: lighten;
+}
+
+.feather {
+  position: absolute;
+  width: 10px; /* Adjust feather size */
+  height: 3px; /* Adjust feather size */
+  background-color: rgba(255, 255, 255, 0.7); /* Feather color */
+  border-radius: 50% 20%; /* Feather shape */
+  animation: featherFall 1s linear forwards; /* Feather animation */
+  opacity: 0;
+  transform-origin: bottom center;
+  filter:saturate(70%);
+}
+
+@keyframes featherFall {
+  0% {
+      transform: translateY(-50px) rotate(0deg) scale(1); /* Start above the button */
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(50px) rotate(360deg) scale(0.5); /* End below the button */
+      opacity: 0;
+  }
+}
+.clickableImageContainer.clicked .imageWrapper {
+  transform: scale(1.1);
+}

@@ -11,7 +11,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-gradient-start: #7effff; /* Default start color */
+  --background-gradient-mid: #5ca6fa;   /* Default middle color */
+  --background-gradient-end: #f0f0f0;   /* Default end color */
+
 }
+
 
 a {
   font-weight: 500;
@@ -23,16 +29,23 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0; /* Remove default body margins */
+  overflow-x: hidden; /* Prevent horizontal scrollbars if the gradient is very wide */
+  min-height: 100vh; /* Ensure the body is at least the height of the viewport */
+  background: radial-gradient(ellipse at 50% -20%, var(--background-gradient-start) 0%, var(--background-gradient-mid) 50%, var(--background-gradient-end) 100%);  background-size: 200% 150%;
+  animation: cloudAnimation 30s linear infinite;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@keyframes cloudAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 button {

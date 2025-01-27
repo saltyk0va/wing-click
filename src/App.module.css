@@ -1,0 +1,94 @@
+/* App.module.css */
+
+@font-face {
+  font-family: 'Chomsky'; /* Choose a name for your font */
+  src: url('./assets/fonts/Chomsky.woff2') format('woff2'), /* Path to woff2 */
+       url('./assets/fonts/Chomsky.woff') format('woff'), /* Path to woff (fallback) */
+       url('./assets/fonts/Chomsky.otf') format('opentype');
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+  font-display: swap; /* Important for performance */
+}
+/* Signika-Bold Font */
+@font-face { /* Add this for Signika */
+  font-family: 'Signika-Bold';
+  src: url('./assets/fonts/Signika-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-display: swap;
+}
+/* Signika-Regular Font */
+@font-face { /* Add this for Signika */
+  font-family: 'Signika-Regular';
+  src: url('./assets/fonts/Signika-Regular.woff2') format('woff2');
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face { /* Add this for Signika */
+  font-family: 'Signika-Light';
+  src: url('./assets/fonts/Signika-Light.woff2') format('woff2');
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Metamorphous'; /* Choose a name for your font */
+  src: url('./assets/fonts/Metamorphous.woff2') format('woff2'), /* Path to woff2 */
+       url('./assets/fonts/Metamorphous.woff2') format('woff'); /* Path to woff (fallback) */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+  font-display: swap; /* Important for performance */
+}
+
+
+
+.App {
+    font-family: 'Chomsky', sans-serif; /* Use your custom font */
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+    min-height: 100vh; /* Ensure full viewport coverage */
+    color:rgb(247, 246, 246);
+}
+
+.App h1 {
+  font-family: 'Chomsky', sans-serif; /* Use your gothic font */
+  font-size: 4em;
+  text-align: top;
+  color: rgb(255, 255, 255); /* Base text color */
+  text-shadow: 0 0 10px #eeede8; /* Initial glow */
+  mix-blend-mode: normal; /* Key for intense glow effect */
+  animation: pulseGlow 2s linear infinite alternate; /* Optional animation */
+  filter:saturate(100%);
+  filter:blur(1px);
+}
+@keyframes pulseGlow {
+  0% {
+      text-shadow: 0 0 10px rgb(241, 255, 46);
+  }
+  100% {
+      text-shadow: 0 0 20px rgb(255, 252, 60), 0 0 30px rgba(255, 219, 17, 0.952); /* More intense glow with transparency */
+  }
+}
+
+
+.App h2 {
+  font-family: 'Metamorphous', sans-serif; /* Use your gothic font */
+  font-size: 2em;
+  text-align: center;
+  font-weight:700;
+  color: rgb(245, 243, 243); /* Base text color */
+  text-shadow: 0 0 10px #f7d22e; /* Initial glow */
+  mix-blend-mode: color-dodge; /* Key for intense glow effect */
+  animation: pulseGlow2 2s linear infinite alternate; /* Optional animation */
+  filter:saturate(100%);
+  filter:blur(0px);
+}
+
+@keyframes pulseGlow2 {
+  0% {
+      text-shadow: 0 0 10px rgb(245, 233, 62);
+  }
+  100% {
+      text-shadow: 0 0 20px rgb(250, 240, 98), 0 0 30px rgb(240, 212, 52); /* More intense glow with transparency */
+  }
+}
